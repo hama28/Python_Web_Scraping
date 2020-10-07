@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scraping Fin</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="mt-5">{{ target }}のスクレイピングが完了しました</h5>
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h5 class="card-title">{{ web[0] }}</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/list" method="POST">
+                        <p class="card-text">人気： {{web[1]}} 以上</p>
+                        <p class="card-text">日付： {{web[2]}}</p>
+                        <button type="submit" class="btn btn-info">データの一覧へ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endautoescape %}

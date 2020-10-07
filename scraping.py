@@ -19,7 +19,7 @@ def get_hatebu(users):
             data_list = []
             data_list.append(title.getText())
             data_list.append(url.get('href'))
-            data_list.append(user.getText())
+            data_list.append(user_num[0])
             data_list.append(keisai.getText())
             hatebu_array.append(data_list)
         else:
